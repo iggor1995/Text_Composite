@@ -17,12 +17,15 @@ public class Filter {
 
     public void printFilteredText(Component composite){
         List<Component> componentsPar = ((Composite) composite).getComponents();
+
         for(int i = 0; i < componentsPar.size(); i++){
             if(componentsPar.get(i) instanceof Composite){
                 List<Component> componentsSen = ((Composite)componentsPar.get(i)).getComponents();
+
                 for(int j = 0; j < componentsSen.size(); j++){
                     if(componentsSen.get(j) instanceof Composite) {
                         List<Component> componentsWord = ((Composite) componentsSen.get(j)).getComponents();
+
                         for (Component word : componentsWord) {
                             if (word.toString().charAt(0) == word.toString().charAt(word.toString().length() - 1)
                                     & word.toString().length() > 1)

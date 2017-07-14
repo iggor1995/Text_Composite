@@ -8,23 +8,22 @@ import java.util.regex.Pattern;
 
 public class TSplitter {
 
-    private static final char ENTER1 = '\r';
-    private static final char ENTER2 = '\n';
-    private static final String SPACE = " ";
     private static final char SPACESYM = ' ';
     private static final String PATTERN_SYMBOLS = "[\\,\\.\\;\\:\\-\\?\\!]";
     private static final String NEWLINE = "\\n";
+    private static final char ENTER1 = '\r';
+    private static final char ENTER2 = '\n';
     private static final String SPLIT_INTO_SENTENCES_PATTERN = "[\\uFEFF \\w+\\,\\'\\-\\:\\(\\)\\«\\»\\;\\—\\№]+[\\.\\?\\!]";
     private static final String PATTERN_WORDS_PLUS_SYMBOLS = "(\\uFEFF?\\w+\\-?\'?\\w+ \\()" +
-            "|(\\uFEFF?\\w+\\-?\'?\\w+\\)\\, )|" +
-            "(\\uFEFF?\\w+\\-?\\w+\\)|" +
-            "(\\uFEFF?\\w+\\-?\\w+\\, )" +
-            "|(\\uFEFF?\\w+\\-?\\w+\\: )" +
-            "|(\\uFEFF?\\w+\\-?\\w+ )" +
-            "|(\\uFEFF?\\w+\\-?\\w+\\. ?)|" +
-            "(\\uFEFF?\\w+\\-?\\w+\\? ?)|" +
-            "(\\uFEFF?\\w+\\-?\\w+\\! ?)" +
-            "|(\\uFEFF?\\w ))";
+            "|(\\uFEFF?\\w+\\-?\'?\\w+\\)\\, )|" +  //xxx-'xxx),
+            "(\\uFEFF?\\w+\\-?\\w+\\)|" +  //xxx-'xxx)
+            "(\\uFEFF?\\w+\\-?\\w+\\, )" +  //xxx-xxx,
+            "|(\\uFEFF?\\w+\\-?\\w+\\: )" + //xxx-xxx:
+            "|(\\uFEFF?\\w+\\-?\\w+)" + //xxx-xxx )
+            "|(\\uFEFF?\\w+\\-?\\w+\\. ?)|" + //xxx-xxx.
+            "(\\uFEFF?\\w+\\-?\\w+\\? ?)|" + //xxx-xxx?
+            "(\\uFEFF?\\w+\\-?\\w+\\! ?)" + //xxx-xxx!
+            "|(\\uFEFF?\\w ))"; //x 
     private static final String PATTERN_WORDS = "(\\uFEFF?\\w+)|(\\uFEFF?\\w)";
     private static final String SPLIT_INTO_SYMBOLS_PATTERN = "";
 
