@@ -15,15 +15,16 @@ public class TSplitter {
     private static final char ENTER2 = '\n';
     private static final String SPLIT_INTO_SENTENCES_PATTERN = "[\\uFEFF \\w+\\,\\'\\-\\:\\(\\)\\«\\»\\;\\—\\№]+[\\.\\?\\!]";
     private static final String PATTERN_WORDS_PLUS_SYMBOLS = "(\\uFEFF?\\w+\\-?\'?\\w+ \\()" +
-            "|(\\uFEFF?\\w+\\-?\'?\\w+\\)\\, )|" +  //xxx-'xxx),
-            "(\\uFEFF?\\w+\\-?\\w+\\)|" +  //xxx-'xxx)
-            "(\\uFEFF?\\w+\\-?\\w+\\, )" +  //xxx-xxx,
-            "|(\\uFEFF?\\w+\\-?\\w+\\: )" + //xxx-xxx:
-            "|(\\uFEFF?\\w+\\-?\\w+)" + //xxx-xxx )
-            "|(\\uFEFF?\\w+\\-?\\w+\\. ?)|" + //xxx-xxx.
-            "(\\uFEFF?\\w+\\-?\\w+\\? ?)|" + //xxx-xxx?
-            "(\\uFEFF?\\w+\\-?\\w+\\! ?)" + //xxx-xxx!
-            "|(\\uFEFF?\\w ))"; //x 
+            "|(\\uFEFF?\\w+\\-?\'?\\w+\\)\\, )|" +
+            "(\\uFEFF?\\w+\\-?\\w+\\)|" +
+            "(\\uFEFF?\\w+\\-?\\w+\\! ?)|" +
+            "|(\\uFEFF?\\w+\\-?\\w+\\; )|" +
+            "(\\uFEFF?\\w ))" +
+            "(\\uFEFF?\\w+\\-?\\w+\\: )|" +
+            "(\\uFEFF?\\w+\\-?\\w+ )|" +
+            "(\\uFEFF?\\w+\\-?\\w+\\. ?)|" +
+            "(\\uFEFF?\\w+\\-?\\w+\\? ?)|" +
+            "(\\uFEFF?\\w+\\-?\\w+\\, )";
     private static final String PATTERN_WORDS = "(\\uFEFF?\\w+)|(\\uFEFF?\\w)";
     private static final String SPLIT_INTO_SYMBOLS_PATTERN = "";
 
