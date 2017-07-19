@@ -13,19 +13,19 @@ public class TSplitter {
     private static final String NEWLINE = "\\n";
     private static final char ENTER1 = '\r';
     private static final char ENTER2 = '\n';
-    private static final String SPLIT_INTO_SENTENCES_PATTERN = "[\\uFEFF \\w+\\,\\'\\-\\:\\(\\)\\«\\»\\;\\—\\№]+[\\.\\?\\!]";
-    private static final String PATTERN_WORDS_PLUS_SYMBOLS = "(\\uFEFF?\\w+\\-?\'?\\w+ \\()" +
-            "|(\\uFEFF?\\w+\\-?\'?\\w+\\)\\, )|" +
-            "(\\uFEFF?\\w+\\-?\\w+\\)|" +
-            "(\\uFEFF?\\w+\\-?\\w+\\! ?)|" +
-            "|(\\uFEFF?\\w+\\-?\\w+\\; )|" +
-            "(\\uFEFF?\\w ))" +
-            "(\\uFEFF?\\w+\\-?\\w+\\: )|" +
-            "(\\uFEFF?\\w+\\-?\\w+ )|" +
-            "(\\uFEFF?\\w+\\-?\\w+\\. ?)|" +
-            "(\\uFEFF?\\w+\\-?\\w+\\? ?)|" +
-            "(\\uFEFF?\\w+\\-?\\w+\\, )";
-    private static final String PATTERN_WORDS = "(\\uFEFF?\\w+)|(\\uFEFF?\\w)";
+    private static final String SPLIT_INTO_SENTENCES_PATTERN = "[ \\w+\\,\\'\\-\\:\\(\\)\\«\\»\\;\\—\\№]+[\\.\\?\\!]";
+    private static final String PATTERN_WORDS_PLUS_SYMBOLS = "(\\w+\\-?\'?\\w+ \\()" +
+            "|(\\w+\\-?\'?\\w+\\)\\, )|" +
+            "(\\w+\\-?\\w+\\)|" +
+            "(\\w+\\-?\\w+\\, )" +
+            "|(\\w+\\-?\\w+\\; )|" +
+            "(\\w+\\-?\\w+\\: )" +
+            "|(\\w+\\-?\\w+ )" +
+            "|(\\w+\\-?\\w+\\. ?)|" +
+            "(\\w+\\-?\\w+\\? ?)|" +
+            "(\\w+\\-?\\w+\\! ?)|" +
+            "(\\w ))";
+    private static final String PATTERN_WORDS = "(\\w+)|(\\w)";
     private static final String SPLIT_INTO_SYMBOLS_PATTERN = "";
 
     public Component splitText(String text){
